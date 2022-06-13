@@ -71,6 +71,11 @@ function libraryFormSubmit(e) {
             </div>
             </div>
         `
+
+        setTimeout(() => {
+            message.innerHTML = ""
+        }, 2000);
+
     } else {
         let book = new Book(name, author, type);
         let message = document.getElementById("message");
@@ -96,6 +101,10 @@ function libraryFormSubmit(e) {
         `
         // console.log("You have submitted Library form");
         // console.log(book);
+
+        setTimeout(() => {
+            message.innerHTML = ""
+        }, 2000);
 
         let display = new Display();
         display.add(book);
