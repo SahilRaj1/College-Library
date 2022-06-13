@@ -59,11 +59,13 @@
             </div>
         </nav>
 
+        <div id="message"></div>
+
         <div class="container">
             <br />
             <h1>CENTRAL LIBRARY</h1>
             <hr />
-            <form>
+            <form id="libraryForm">
                 <div class="row mb-3">
                     <label for="bookName" class="col-sm-2 col-form-label"
                         >Name</label
@@ -144,20 +146,12 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
                             <th scope="col">Name</th>
                             <th scope="col">Author</th>
                             <th scope="col">Type</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                    </tbody>
+                    <tbody id="tableBody"></tbody>
                 </table>
             </div>
         </div>
