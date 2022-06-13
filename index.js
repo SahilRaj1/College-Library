@@ -69,7 +69,7 @@ function libraryFormSubmit(e) {
 
         setTimeout(() => {
             message.innerHTML = ""
-        }, 5000);
+        }, 4000);
 
     } else {
         let book = new Book(name, author, type);
@@ -99,7 +99,7 @@ function libraryFormSubmit(e) {
 
         setTimeout(() => {
             message.innerHTML = ""
-        }, 5000);
+        }, 4000);
 
         let display = new Display();
         display.add(book);
