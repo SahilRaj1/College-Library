@@ -1,34 +1,29 @@
-
-// constructor
-function Book(name, author, type) {
-    this.name = name;
-    this.author = author;
-    this.type = type;
+class Book {
+    constructor(name, author, type) {
+        this.name = name;
+        this.author = author;
+        this.type = type;
+    }
 }
 
-// dispalay constructor
-function Display() {
+class Display {
+    add(book) {
+        let tableBody = document.getElementById("tableBody");
+        let UIstring = `
+            <tr>
+                <td>${book.name}</td>
+                <td>${book.author}</td>
+                <td>${book.type}</td>
+            </tr>`;
+        tableBody.innerHTML += UIstring;
+    }
 
-}
-
-// add methods to display prototypes
-Display.prototype.add = function (book) {
-    let tableBody = document.getElementById("tableBody");
-    let UIstring = `
-        <tr>
-            <td>${book.name}</td>
-            <td>${book.author}</td>
-            <td>${book.type}</td>
-        </tr>`;
-    tableBody.innerHTML += UIstring;
+    clear() {
+        let libraryForm = document.getElementById("libraryForm");
+        libraryForm.reset();
+    };
 };
 
-Display.prototype.clear = function () {
-    let libraryForm = document.getElementById("libraryForm");
-    libraryForm.reset();
-};
-
-// add submit event listener to libraryform
 let libraryForm = document.getElementById("libraryForm");
 libraryForm.addEventListener("submit", libraryFormSubmit);
 
@@ -74,7 +69,7 @@ function libraryFormSubmit(e) {
 
         setTimeout(() => {
             message.innerHTML = ""
-        }, 2000);
+        }, 5000);
 
     } else {
         let book = new Book(name, author, type);
@@ -104,7 +99,7 @@ function libraryFormSubmit(e) {
 
         setTimeout(() => {
             message.innerHTML = ""
-        }, 2000);
+        }, 5000);
 
         let display = new Display();
         display.add(book);
